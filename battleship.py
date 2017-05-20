@@ -18,7 +18,8 @@ def print_board(board):
     for row in board:
         print(' '.join(row))
 
-#Classes to randomize battleship location
+#Functions to randomize battleship location
+#-1 used to account for Python indexing
 def rand_row(board):
     return randint(0,len(board) - 1)
 def rand_col(board):
@@ -78,7 +79,7 @@ while True:
             print("\nMiss!\n")
             board[user_row-1][user_col-1] = 'X'
 
-    #If user runs out of turns ask to play again. Reset or quit based on answer.
+    #If user runs out of turns, ask to play again. Reset or quit based on answer.
     else:
         print("Game Over!")
         play_again = input("Play again? (y/n)\n ")
