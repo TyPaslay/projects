@@ -45,9 +45,15 @@ while True:
 
         #User guesses where battleship is
         #-1 is used to offset Python indexing
-        user_row = int(input("Which row? "))
-        user_col = int(input("Which column? "))
-        user_guess = [user_row - 1],[user_col - 1]
+        try:
+            user_row = int(input("Which row? "))
+            user_col = int(input("Which column? "))
+            user_guess = [user_row - 1],[user_col - 1]
+
+        #Exception for inputs that are not integers.
+        except ValueError:
+            print("That's not a number ya pox-face swine!")
+            continue
 
         #Ensures user guesses are within the dimensions of the board
         if user_row > len(board) or user_col > len(board):
